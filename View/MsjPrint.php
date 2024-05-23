@@ -3,7 +3,7 @@ require_once("Controller/ToDoController.php");
 class MsjPrint {
 
     public function msjBienvenidaUsuario(Usuario $usuario){
-        print("#### Usuario: ".$usuario->getNombre()."\n");
+        print("[#######] ".$usuario->getNombre()."\n");
     }
 
     public function msjBienvenida(){
@@ -18,9 +18,20 @@ class MsjPrint {
         system('clear');
     }
 
-    public function msjFin() {
-        print("#### Gracias \n");
+    public function msjMenu(){
+        print("[#######] Menu Lista De Tareas [#######] \n");
+        print("[#######] 1. Crear Lista \n");
+        print("[#######] 2. Ver Lista \n");
+        print("[#######] 2. Modificar Lista \n");
+        print("[#######] 3. Eliminar lista \n");
+        print("[#######] Inserte la opcion: ");
+        return trim(fgets(STDIN));
     }
+
+    public function msjFin() {
+        print("[#######] Gracias [#######]\n");
+    }
+    
 }
 
 ?>
