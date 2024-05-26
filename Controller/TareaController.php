@@ -1,8 +1,9 @@
 <?php
 require_once("View/MsjPrint.php");
 require_once("Model/Usuario.php");
+require_once("Model/Tarea.php");
 
-class ToDoController {
+class TareaController {
 
     public function __construct(){
 
@@ -25,13 +26,18 @@ class ToDoController {
     }
 
     public function menu(){
+
         $mjsPrint = new MsjPrint();
         $opcion = $mjsPrint->msjMenu();
+
         
         switch ($opcion) {
 
             case 1:
-                print("Opcion 1");
+                
+                $mjsPrint->msjCrearTareaDescripcion();
+                $mjsPrint->msjCrearTareaNombre();
+
                 break;
 
             case 2:
