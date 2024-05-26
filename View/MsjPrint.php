@@ -1,17 +1,17 @@
 <?php
-require_once("Controller/ToDoController.php");
+require_once("Controller/TareaController.php");
 class MsjPrint {
 
     public function msjBienvenidaUsuario(Usuario $usuario){
-        print("[#######] ".$usuario->getNombre()."\n");
+        print("[+++++++]  ".$usuario->getNombre()."\n");
     }
 
     public function msjBienvenida(){
         print("[#######] Bienvenido A Lista De Tareas [#######]\n");
         print("[#######] Ingresa Tu Nombre: ");
         $nombre = trim(fgets(STDIN));
-        $ToDoController = new ToDoController();
-        $ToDoController->index($nombre);
+        $tareaController = new TareaController();
+        $tareaController->index($nombre);
     }
     
     public function clearScreen(){
@@ -19,12 +19,12 @@ class MsjPrint {
     }
 
     public function msjMenu(){
-        print("[#######] Menu Lista De Tareas [#######] \n");
-        print("[#######] 1. Crear Lista \n");
-        print("[#######] 2. Ver Lista \n");
-        print("[#######] 2. Modificar Lista \n");
-        print("[#######] 3. Eliminar lista \n");
-        print("[#######] Inserte la opcion: ");
+        print("[#######] Opciones del Menu [#######] \n");
+        print("[*******] 1. Crear tarea \n");
+        print("[*******] 2. Ver listas \n");
+        print("[*******] 2. Modificar Lista \n");
+        print("[*******] 3. Eliminar lista \n");
+        print("[*******] Seleccione una de las opcion: ");
         return trim(fgets(STDIN));
     }
 
@@ -32,6 +32,18 @@ class MsjPrint {
         print("[#######] Gracias [#######]\n");
     }
     
+    public function msjCrearTareaNombre() {
+        print("[#######] Nombre de la tarea [#######] \n");
+        print("[*******] ");
+        $nombreTarea = trim(fgets(STDIN));
+    }
+
+    public function msjCrearTareaDescripcion() {
+        print("[#######] Descripcion de la tarea [#######] \n");
+        print("[*******] ");
+        $descripcionTarea = trim(fgets(STDIN));
+    }
+
 }
 
 ?>

@@ -6,15 +6,25 @@ class Tarea {
     private $descripcion;
 
     public function __construct() {
-
-    }
-
-    public function crearTarea() {
-
         
-
     }
 
-}
+    public function setTitulo($titulo) {
+        $this->titulo = $titulo;
+    }
+
+    public function getTitulo() {
+        return $this->titulo = $titulo;
+    }
+
+    public function setDescripcion($descripcion) {
+        $this->descripcion = $descripcion;
+    }
+
+    public function getDescripcion() {
+        return $this->descripcion;
+    }
+
+}  
 
 ?>
